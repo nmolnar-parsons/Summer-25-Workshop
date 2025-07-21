@@ -45,7 +45,7 @@ Welcome to CSS! This glossary is designed for new students in the Parsons Data V
 - `<br>` line break
 - `<pre>` text break? dunno the word
 
-<br>
+<br></br>
 
 - Debugging
     - use the dang inspector (lets you see how the browser has built the DOM off of the code you have provided)
@@ -56,7 +56,111 @@ Welcome to CSS! This glossary is designed for new students in the Parsons Data V
     - dir for reading direction
     - other attributes "do things"
 - Aria Role (accessibility) 
-    - aria-label = True/False for what appears on the accessibility tree
-- 
+- HTML Character entity
+    - typing characters not to be interpreted by whatever reads the html
+    - i.e. you want to display an ampersand instead of telling the browser "this is the start of a tag"
+    - `&nbsp;` is a non-breaking space (line break will not happen between these two characters/words)
 
+<br></br>
+
+- Links
+    - `<a>` element can be wrapped around any content. Use href attribute to point to specific link
+        - https;// or http:// is neccesary for href attribute link
+        - "s" is secure - better and safer to use
+    - absolute path vs relative path
+        - use relative paths for internal nav
+        - adding `..` to beginning of path reverses the reading direction (i.e. start at named file and go up) relative from the file the path is written
+    - index.html: HTML file that goes into the folder containing content
+        - put all your html for a specific page into an index.html file under a descriptively named fodler 
+- Navigation
+    - `<nav>` defines navigation links
     
+<br></br>
+
+- Images
+    - `<img>` attributes:
+        - src
+        - width and height
+        - alt (alt text)
+            - can leave blank alt text for images that don't need to be read aloud (i.e. logos)
+    - Image file formats
+        - goal: high quality, smallest size
+        - GIF:
+            - good at compressing large areas of color
+            - can do multiple images
+        - SVG
+            - Vector file (good for logos)
+            - good for scalable images
+        - JPG
+            - good for digital photos (make sure it is properly sized)
+        - PNG
+            - images that need transparency 
+- Reponsive Images
+    - give several file types of image, browser can decide which to load based on user's computer/monitor/network speed
+    - `<img>` srcset= "list of alternative resolutions" 
+        - and resolution (2x, 3x, etc of default height/width) after each file
+        -   height/width stays fixed
+        - or file pixel width (i.e. 480w, 960w)
+            - fast, assumes you need image to be 100% of layout width
+    - sizes attribute
+        - lists which size image to use at specific widths
+- Reponsive Picutres
+    - more control over how image is presented on dif devices
+    - wrap `<img>` with `<picture>` element
+        - give alternative images with `<source>` elements 
+    - a lot of this is handled by software
+- Figure and Figcaption
+    - `<figcaption>` for figure caption
+    - ^ above and image are wrapped in `<fig>` element
+
+<br></br>
+
+- Media
+    - `<audio>` 
+        - attribute "controls" tells browser to give default audio controls 
+        - loop
+        - autoplay
+    - `<video>`
+        - many types of video encoding codecs (all use lots of compression)
+        - more complicated than audio/images to provide several resolutions (you usually use a video hosting service embedd)
+    - subtitles and captions
+        - src= .vtt file  in `<track>` element
+    - iframes for embedding videos 
+        - important to consider security for iframes
+- Language
+    - can set in `<html>` tag (wraps the entire content)
+    - lang language 
+    -dir reading direction 
+    - character set (most use UTFT-8 (Unicode))
+        - set in head element `<meta>`
+- `<div>` and `<span>`
+    - ways to wrap/group element or mark a phrase
+    - `<span>` is inline
+    - use when there's not another appropriate element
+
+<br></br>
+
+Putting it all together
+- HTML
+    - user requests HTML file, browser fetches HTML file and executes instructions
+    - all other content files are requested by the browser as it reads the HTML file top to bottom
+    - Key parts:
+        - doctype 
+        - HTML element ("everything in this is HTML")
+            - declare language and direction
+        - head
+            - all invisible metadata
+            - `<title>` element for 
+            - `<description>` description of site that ends up in search engine results
+            - `<link>` links to other assets we want to load (rel (type)and href)
+            - `<script>` for loading JS
+        - body
+            - all content
+            - Overall structure:
+                - `<main>` once per webpage. This is the main content
+                - `<header>` or `<footer>` for headers or footers in article
+                    - footer doesn't have to go on the bottom. semantic meaning more important than location
+                - `<article>` unit of content
+                - `<section>` for sections of content
+                - `<aside>` for side content
+
