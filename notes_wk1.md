@@ -37,3 +37,15 @@ Welcome to CSS! This glossary is designed for new students in the Parsons Data V
 - lists
     - `<li>` list item are wrapped with `<ul>` unordered list `<ol>` ordered list 
     - `<dl>`definition list with `<dt>` term and `<dd>` descriptions
+- quotes `<q>` quote `<blockquote>` block quote
+- dates and times
+    - give attribute `datetime="YYYY-MM-DD"` for computer, add whatever content you want in element tag `<time></time>`
+- `<code>`
+    - `&lt;` < `&gt;` > rendered by browser as symbol but no interpreted as code
+- `<br>` line break
+- `<pre>` text break? dunno the word
+
+- Debugging
+    - use the dang inspector (lets you see how the browser has built the DOM off of the code you have provided)
+- Attributes
+    
