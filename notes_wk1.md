@@ -35,5 +35,5 @@ Welcome to CSS! This glossary is designed for new students in the Parsons Data V
     - `<em>` emphasis italics
     - rec: use for content without individual element
 - lists
-    - `<li>` list item
-    - `<ul>` unordered list
+    - `<li>` list item are wrapped with `<ul>` unordered list `<ol>` ordered list 
+    - `<dl>`definition list with `<dt>` term and `<dd>` descriptions
