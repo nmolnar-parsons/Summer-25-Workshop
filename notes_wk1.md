@@ -171,3 +171,13 @@ Putting it all together
     - Background/Header: 1500-2500px is usually big enough
     - Thumbnails: 300px or 500px 
     - use adobe express or shutterstock to resize images
+
+- Referencing CSS:
+    - inline 
+        - overides all others. Use sparingly
+    - Internal CSS
+        - must be added to each page
+        - sets style for specific elements
+    - External
+        - uses a separate file
+        - THIS IS THE BEST ONE TO USE
