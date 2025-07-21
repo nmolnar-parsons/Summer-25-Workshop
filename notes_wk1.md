@@ -12,7 +12,7 @@ Welcome to CSS! This glossary is designed for new students in the Parsons Data V
     - Kind of like universal variables
     - Sets the style for all HTML elements of type specified in style sheet
     - Link CSS style sheet to html file in head section
-## Week 1 HW
+### HTML
 - Document Object Model (DOM)
     - Structured representation of elements and their relationships in the document
     - Created by the browser from the HTML document - nested tree of HTML elements
@@ -164,3 +164,10 @@ Putting it all together
                 - `<section>` for sections of content
                 - `<aside>` for side content
 
+### CSS
+
+- I am not following along with the projects or HTML files provided by Linkedin classroom, instead making changes to my own index.html file
+- Image sizes (1x and 2x for different pixel density screens)
+    - Background/Header: 1500-2500px is usually big enough
+    - Thumbnails: 300px or 500px 
+    - use adobe express or shutterstock to resize images

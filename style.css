@@ -1,0 +1,41 @@
+/*
+
+  This is your CSS document.
+  This text is a comment and won't affect your CSS validation.
+
+*/
+
+/*
+  
+  CSS rulesets are written as
+
+  element { 
+    property: value;
+  }
+
+*/
+
+/*
+  For example, this changes the font of
+  everything inside of the HTML tag
+*/
+
+html {
+  font-family: Arial;
+}
+
+/*
+
+  Use the space below to change the FONT COLOR 
+  and BACKGROUND COLOR of the BODY tag.
+
+*/
+
+
+
+/*
+
+  Reference: 
+  https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+
+*/
