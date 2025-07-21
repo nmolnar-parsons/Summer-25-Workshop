@@ -9,19 +9,20 @@ Welcome to CSS! This glossary is designed for new students in the Parsons Data V
 - Responsive website adapts to the device used
 - Asset folder includes videos/images and style sheets
 - Style sheet (CSS) defines style and appearance of a website 
-- Kind of like universal variables
-- Sets the style for all HTML elements of type specified in style sheet
-- Link CSS style sheet to html file in head section
+    - Kind of like universal variables
+    - Sets the style for all HTML elements of type specified in style sheet
+    - Link CSS style sheet to html file in head section
 ## Week 1 HW
 - Document Object Model (DOM)
-- Structured representation of elements and their relationships in the document
-- Created by the browser from the HTML document
-- Rendered content in a brower
-- Every content wrapped in HTML tag is a “DOM Object”/“Node”
+    - Structured representation of elements and their relationships in the document
+    - Created by the browser from the HTML document
+    - Rendered content in a brower
+    - Every content wrapped in HTML tag is a “DOM Object”/“Node”
 - <head> hold invisible information for a document
 - Event: any action/interatcion in a browser
-- Use JS to react to events (event handling)
+    - Use JS to react to events (event handling)
 - In short:
-- HTML for content
+    - HTML for content
     - CSS for style
     - Javascript for interactivity
+- HTML
