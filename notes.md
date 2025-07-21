@@ -17,7 +17,7 @@ Welcome to CSS! This glossary is designed for new students in the Parsons Data V
     - Structured representation of elements and their relationships in the document
     - Created by the browser from the HTML document - nested tree of HTML elements
     - Every content wrapped in HTML tag is a “DOM Object”/“Node”
-- <head> hold invisible information for a document
+- "<head>" hold invisible information for a document
 - Event: any action/interatcion in a browser
     - Use JS to react to events (event handling)
 - In short:
@@ -28,12 +28,12 @@ Welcome to CSS! This glossary is designed for new students in the Parsons Data V
     - less fragile/powerful -> more fragile/powerful
     - tip: "keep it simple" do as much as you can/makes sense in HTML and then move up the chain
 - headlines
-    - standard for <h1> to be main headline (and only have one)
+    - standard for "<h1>" to be main headline (and only have one)
     - intentional headline hierachy/system is very very helpful
 - italics/bold (different tags for different uses)
-    - <i> visual only (for titles, etc)
-    - <em> emphasis italics
+    - "<i>" visual only (for titles, etc)
+    - "<em>" emphasis italics
     - rec: use for content without individual element
 - lists
-    - <li> list item
-    - <ul>
+    - "<li>" list item
+    - "<ul>"
