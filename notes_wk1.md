@@ -45,7 +45,13 @@ Welcome to CSS! This glossary is designed for new students in the Parsons Data V
 - `<br>` line break
 - `<pre>` text break? dunno the word
 
+<pre>
+
 - Debugging
     - use the dang inspector (lets you see how the browser has built the DOM off of the code you have provided)
 - Attributes
+    - class
+    - id (much more specific, not used as much as classes)
+    - other attributes "do things"
+
     
