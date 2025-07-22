@@ -181,3 +181,14 @@ Putting it all together
     - External
         - uses a separate file
         - THIS IS THE BEST ONE TO USE
+- CSS is a declarative language
+    - `selector {property: value; (what is being styled at what value to give it)}`
+    - shorthand and longhand properties
+- values and units
+    - integer, number, percentage, dimension (number val with unit)
+    - length = number value with absolute or relative unit
+        - px is most commonly used absolute unit
+- keywords
+    - textual data type
+- Color palette
+    - 

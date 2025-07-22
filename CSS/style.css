@@ -1,8 +1,16 @@
 
 body {
-    background: mediumblue;
+    background: #23335D;
+    color: #cddff1; 
 }
 
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
 
 
 /*
