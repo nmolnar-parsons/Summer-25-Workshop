@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nichos Molnar | About Me</title>
-        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <header>
-            <h1>Hello, this is Nichos Molnar</h1>
-            <h2>and this is a little bit about me.</h2>
+            <h1>Hello, my name is Nichos Molnar.</h1>
+            <img src="image/portrait.jpeg" alt="Nichos Molnar" width="100">
+            <h2>and this is a little about me and a lot about my new year's resolution.</h2>
         </header>
         <main>
+            <p>I grew up in Oakland, California, and have studied and worked in biology research for the past few years.
+                I have a strong love for nature, learning about useful or useless things, and for storytelling. 
+                I grew up reading National Geographic and I have a strong fondness for comics and other combinations of text and image.
+            </p>
             <h3>Right now, I'm working on my new year's resolution: draw the 14 tallest mountains in the world.</h3>
-            <p>Around Christmastime, I finished <i>Into Thin Air</i>, an account of a mountaneering disaster
-                on the slopes of Mount Everest. And after reading about the loss of 12 lives on the mountain in one terrible season,
-                I wanted nothing more than to get as close to the mountain as I could. I sent myself down a rabbit hole 
-                of research which dominated my thinking so much that my mountain fascinatination (and the book) are mentioned
-                prominently in my application to this program.</p>
-            <p>Coincidentally, I was learning how to draw, and was looking for new subjects. As it turns out, Mountains are good
-                subject material (and pretty easy to learn how to draw, to boot). So I set my goal: 14 mountains, 12 months.
-                Something achievable.</p>
-            <h3>The Plan:</h3>
-
-            <!-- Turn this into a two col table-->
+            <p>Around Thanksgiving, I finished <i>Into Thin Air</i>, an account of a mountaneering disaster
+                on the slopes of Mount Everest. This book set my brain on fire. I sent myself down a rabbit hole, researching
+                Everest, mountaineering, mountaineering disasters, and 14 "eight-thousanders," an elite club made up of the 
+                tallest, most remote mountains in the world. Like so many before me, I am fascinated by these peaks. For the moment,
+                my interest is limited such that I can enjoy the mountains firmly from the safety of my home and away from the dangers of those altitudes.
+            </p>
+            <p>Coincidentally, I was learning how to draw, and was looking for subjects to paint.  Mountains are good
+                subject material for learning shapes, light, and color. So I set my goal: 14 mountains, 12 months.
+                Something achievable!</p>
+            <br>
+            <h3>My plan is to draw these mountains in these months:</h3>
+            <!-- Turn below into a two col table. I don't think is a good way to do it-->
             <div class="row">
                 <div class="column">
-                    <ol>
+                    <ul class="month_list">
                         <li>January</li>
                         <li>Feburary</li>
                         <li>March</li>
@@ -39,10 +45,10 @@
                         <li>October</li>
                         <li>November</li>
                         <li>December</li>
-                    </ol>
+                    </ul>
                 </div>
                 <div class="column">
-                    <ol>
+                    <ul class="mountain_list">
                         <li>Shishapangma</li>
                         <li>Gasherbrum 1, Gasherbrum 2</li>
                         <li>Broad Peak</li>
@@ -55,30 +61,66 @@
                         <li>Kangchenjunga</li>
                         <li>K2</li>
                         <li>Everest</li>
-                    </ol>
+                    </ul>
                 </div>
             </div>        
             <p><small>Maybe Feburary and September would be busy, but I could squeeze in an extra mountain here and there.</small></p>
-            <img src= "image/1-SSPM-500.jpeg" alt = "Shishapangma"/>
-            <img src= "image/2-Gasherbrum1-500.jpeg" alt = "Gasherbrum 1"/>
-            <img src= "image/3-Gasherbrum2-500.jpeg" alt = "Gasherbrum 2"/>
-            <img src= "image/4-BroadPeak-500.jpeg" alt = "Broad Peak"/>
-            <img src= "image/5-Annapurna-500.jpeg" alt = "Annapurna"/>
-            <img src= "image/6-NP-500.jpeg" alt = "Nanga Parbat"/>
-            <img src= "image/7-ManalsuWIP-500.jpeg" alt = "Manaslu, Work in Progress"/>
-            <img src= "image/Filler-500.jpeg" alt = "More coming soon!"/>
+            <h3>And here's what I have so far:</h3>
+            <div class="grid-container">
+                <figure class="mountain_fig" >
+                    <img class="mountain" src= "image/1-SSPM-500.jpeg" alt = "Shishapangma">
+                    <figcaption> I learned to use a standard canvas side <em>after</em> I finished this one.</figcaption>
+                </figure>
+                <img class="mountain" src= "image/2-Gasherbrum1-500.jpeg" alt = "Gasherbrum 1">
+                <img class="mountain" src= "image/3-Gasherbrum2-500.jpeg" alt = "Gasherbrum 2">
+                <img class="mountain" src= "image/4-BroadPeak-500.jpeg" alt = "Broad Peak">
+                <img class="mountain" src= "image/5-Annapurna-500.jpeg" alt = "Annapurna">
+                <img class="mountain" src= "image/6-NP-500.jpeg" alt = "Nanga Parbat">
+                <figure class="mountain_fig">
+                    <img class="mountain" src= "image/7-ManalsuWIP-500.jpeg" alt = "Manaslu, Work in Progress">
+                    <figcaption>Manaslu. A Work in Progress!</figcaption>
+                </figure>
+                <figure class="mountain_fig">
+                    <img class="mountain" src= "image/Filler-500.jpeg" alt = "Dhaulagiri?">
+                    <figcaption>Dhaulagiri?</figcaption>
+                </figure>
+                <figure class="mountain_fig">
+                    <img class="mountain" src= "image/Filler-500.jpeg" alt = "Cho Oyu?">
+                    <figcaption>Cho Oyu?</figcaption>
+                </figure>
+                <figure class="mountain_fig">
+                    <img class="mountain" src= "image/Filler-500.jpeg" alt = "Lhotse?">
+                    <figcaption>Lhotse?</figcaption>
+                </figure><figure class="mountain_fig">
+                    <img class="mountain" src= "image/Filler-500.jpeg" alt = "Makalu?">
+                    <figcaption>Makalu?</figcaption>
+                </figure><figure class="mountain_fig">
+                    <img class="mountain" src= "image/Filler-500.jpeg" alt = "Kangchenjunga?">
+                    <figcaption>Kangchenjunga?</figcaption>
+                </figure>
+                <figure class="mountain_fig">
+                    <img class="mountain" src= "image/Filler-500.jpeg" alt = "K2">
+                    <figcaption>K2?</figcaption>
+                </figure><figure class="mountain_fig">
+                    <img class="mountain" src= "image/Filler-500.jpeg" alt = "Everest?">
+                    <figcaption>Everest?</figcaption>
+                </figure>
+                <!-- class = mountain for photo borders and background-->
+            </div>
+            <p>(I am now TWO MONTHS behind schedule. Deary me.)</p>
             <div>
-                <h2>this is used to test out DIVs</h2>
-                <a href="https://x.com/ThreePoundsRice"><img src="image/icon-logo-twitter.png"/></a>
+                <h3>You can follow my progress on twitter, where I mostly post about soccer.</h3>
+                <a href="https://x.com/ThreePoundsRice"><img src="image/icon-logo-twitter.png" alt = "tweeter"></a>
                 <!-- Above is an anchor tag-->
             </div>
         </main>
+        <br>
         <details>
             <summary>This is where I have hidden text</summary>
             <p>This is text I have hidden</p>
         </details>
         <footer>
-            <div> &copy; Copyright 2021. All Rights Reserved</div>
+            <div> &copy; Copyright 2021. All Rights Reserved.</div>
             <a href="https://parsons.nyc/archive/#/?categories=thesis">MSDV Homepage</a>
         </footer>
     </body>

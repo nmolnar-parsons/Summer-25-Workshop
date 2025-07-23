@@ -190,5 +190,23 @@ Putting it all together
         - px is most commonly used absolute unit
 - keywords
     - textual data type
-- Color palette
-    - 
+- Color palette (helpful for consistent coloring)
+- Element relationships:
+    - parent
+    - child
+    - sibling
+    - ancestor
+    - descendant
+    - can do selection by these
+        - `ancestor descendant { whatever stuff }`
+
+<br></br>
+
+- CSS Box model
+    - content, padding, border, margin
+    - properties:
+        - width
+        - height
+        - padding
+- Floating 
+    - and clearing? 

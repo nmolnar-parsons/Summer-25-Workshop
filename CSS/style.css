@@ -1,59 +1,63 @@
+html {
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
 
 body {
     background: #23335D;
     color: #cddff1; 
 }
 
+
+header{
+  padding: 10px;
+  text-align: center;
+  background-color: #7aa8cd;
+}
+
+footer {
+  padding: 10px;
+  text-align: center;
+  background-color: #5493bb;
+}
+
+h2, h3 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .row {
   display: flex;
+  text-align: center;
+  font-size: 18px;
 }
 
 .column {
-  flex: 50%;
+  flex: 15%;
+  text-align: center;
+  font-size: 18px;
 }
 
 
-/*
-
-  This is your CSS document.
-  This text is a comment and won't affect your CSS validation.
-
-*/
-
-/*
-  
-  CSS rulesets are written as
-
-  element { 
-    property: value;
-  }
-
-*/
-
-/*
-  For example, this changes the font of
-  everything inside of the HTML tag
-*/
-
-/*
-html {
-  font-family: Arial;
+.mountain {
+  width: 100%;
+  padding: 10px 5px;
+  border: 30px;
+  border-color: black;
 }
 
-*/
-
-/*
-
-  Use the space below to change the FONT COLOR 
-  and BACKGROUND COLOR of the BODY tag.
-
-*/
+.mountain_fig {
+  margin: 0%;
+}
 
 
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: repeat(7, 1fr);
+}
 
-/*
+.mountain_list, .month_list li{
+  list-style-type: none;
+  color: #7aa8cd;
+}
 
-  Reference: 
-  https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
 
-*/
