@@ -1,6 +1,6 @@
 
 
-# MSDV Meeting Two Jul 24
+# MSDV Meeting Two July 24
 ## Week 2; JAVASCRIPT
 - Actually a programming language, unlike CSS and HTML (which are about structure and style specifically to documents)
 - So far, pretty standard programming language basics
@@ -32,3 +32,8 @@
     - return (to determine "export")
 
 - call javascript code from javascript file using `<script>` element 
+
+- why use `this`? 
+    - helpful for classes (template for object)
+        - can have functions defined inside
+    - this can help when functions are defined inside and saves a lot of time 
