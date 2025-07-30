@@ -38,3 +38,25 @@
   - helpful for classes (template for object)
     - can have functions defined inside
   - this can help when functions are defined inside and saves a lot of time
+
+
+- console.log
+  - mainly for debugging/pre-printing into the console on your website
+  - saves times in typing in variables
+
+
+- assignment statement creates a reference to variable
+  - making changes to the reference will make changes to the original
+  - safer ways to make copies:
+    - object.assign({}, objectYouWantToCopy );
+    - {... objectYouWantToCopy};
+      - "..." spread operator: spread out all data in object (in this case into a copy)
+
+- switch conditional
+  - similar (very similar) to if/else
+  - switch checks prompt and goes through "cases"
+    switch
+      case "":
+        // stuff goes here
+      break;
+  - execution will cascade into next case blocks if no break statement is included
