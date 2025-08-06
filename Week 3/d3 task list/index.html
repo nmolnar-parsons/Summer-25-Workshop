@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>Assignment 3</title>
+
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #1a1a1a;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 30em;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #to-do-form {
+            display: flex;
+        }
+
+        #to-do-form>input {
+            /* reset all default css values */
+            all: unset;
+            padding: 0.5rem;
+        }
+
+        #to-do-form>input:first-child {
+            flex: 1 1 auto;
+        }
+
+        #to-do-form>input[type="text"] {
+            border: 1px solid #dddddd;
+            border-right: 0;
+            background: #ffffff;
+            border-radius: 0.25rem 0 0 0.25rem;
+        }
+
+        #to-do-form>input[type="text"]:focus {
+            border-color: #aaaaaa;
+        }
+
+        #to-do-form>input[type="submit"] {
+            border: 1px solid hsla(216, 98%, 45%, 1.0);
+            background: hsla(216, 98%, 52%, 1.0);
+            color: #ffffff;
+            border-radius: 0 0.25rem 0.25rem 0;
+            cursor: pointer;
+        }
+
+        #to-do-form>input[type="submit"]:hover {
+            background: hsla(216, 98%, 45%, 1.0);
+        }
+
+        .task {
+            border: 1px solid #dddddd;
+            background: #ffffff;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 1rem;
+            border-radius: 0.25rem;
+        }
+
+        
+        .task>div:first-child {
+            font-weight: 600;
+            flex: 1 1 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <form id="to-do-form">
+                <input id="to-do-search-box" class="form-control" type="text" placeholder="Task Name" />
+                <input class="btn btn-primary" type="submit" value="Add" />
+            </form>
+        </div>
+        <div>
+            <h1>Your Tasks</h1>
+            <div id="to-do-entries" class="d-flex flex-column gap-2">
+                
+                
+                
+                
+                <!-- use d3 to add content here
+                    ----------------------------------------------------------
+                    this is example markup that you can use to display a task 
+                    you will want this type of element to be defined through d3
+                    ------------------------------------------------------------
+                    <div class="task">
+                        <div>This is a task</div>
+                        <div>
+                            <button>Delete</button>
+                        </div>
+                    </div>
+                    -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="text/javascript">
+        // assign selected d3 elements to variables
+        const form = d3.select('#to-do-form')
+        const searchBox = d3.select('#to-do-search-box') //searchbox already created for us in HTML doc
+        const toDoEntries = d3.select('#to-do-entries')
+
+        const makeToDo = function(added_task){ // function that assigns inputted text to a div
+            // div is made of div with text and delete button div
+
+            // create div constant and give it premade task properties for CSS
+            const div = d3.create("div").attr("class", "task");
+
+            //add div html element - in this case use .append to create a child <div> element in 
+            div.append('div').text(added_task);
+            
+            // add delete button and add some customization
+            div.append('div').append('button').text('Get Outta Here').style("color", "red") //this is what it looks like
+            .on('click', () => { // this is what it does
+                div.remove()
+            });
+
+            return div
+
+        }
+
+        const submitHandler = (event) => {
+            // this event will be pressing the "add" button on the task list
+            event.preventDefault();
+
+            const added_task = makeToDo(searchBox.property("value")) // make new div out of input box content
+
+            // add new div to toDoEntries
+            toDoEntries.append(() => added_task.node())
+            console.log('form has been submitted')
+        }
+
+        form.on('submit', submitHandler)
+    </script>
+</body>
+
+</html>

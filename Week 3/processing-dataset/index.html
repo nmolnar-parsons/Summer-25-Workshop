@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset</title>
+</head>
+<body>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="module" async>
+        // fetch data from API
+        const data = await d3.json('https://data.cityofnewyork.us/resource/tg4x-b46p.json');
+        console.log(data);
+
+        //trying first example: group film permits by borough and then provide counts for each permit type
+        const permitsByBorough = d3.group(data, (d) => d.borough);
+        
+        // group by event type and then by start time from startdatetime
+        const permitByType = d3.rollup(data,
+            v => v.length,
+            (d) => {
+                return new Date(d['startdatetime']).toTimeString() //note: times are not grouped in order
+            },
+            (d) => d['eventtype'] );
+        console.log(permitByType)
+
+        // rollup by borough
+        const rollup = d3.rollup(
+            data,
+            (v) => v.length,
+            (d) => d.borough
+        )
+        console.log(rollup)
+
+        //rollup by EventAgency: which event agencies put in the most permits?
+        const whichEventAgency = d3.rollup(data,
+            v => v.length,
+            (d) => d['eventagency']
+        )
+        console.log('which event agencies put in the most permits?')
+        console.log(whichEventAgency)
+        console.log('turns out there is only one event agency')
+
+        //rollup by days of the week: which days are the week are most popular for filming in each borough
+        const filmingDaysWeek = d3. rollup(data,
+            v => v.length,
+            (d) => d.borough,
+            (d) => {
+                const date = new Date(d['startdatetime'])
+                return date.getDay();
+            }
+        )
+        console.log(filmingDaysWeek)
+
+
+    </script>
+</body>
+</html>
