@@ -133,3 +133,16 @@
         - compares item with previous and transforms based on user supplied function
         - ex: sums all values in array into single number
         - flattening an array and doing some arithmetic
+
+- Homework review
+    - `<input>` element handles events
+        - specify type = 
+    - event.preventDefault() is good practice to add
+        - stops browser default event from happening when action occurs, tells browser to instead use user provided command (i.e. what we write in our handler function)
+    - every HTML element has a "node" (which technically is the contents of HTML itself)
+        - .node() gets you the HTML element
+
+    - javascript Map
+        - similar to object which has structure 'key': 'value
+        - for map, 'key' doesn't need to be string
+        - also you get more commands/transformations

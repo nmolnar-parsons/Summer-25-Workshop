@@ -140,6 +140,7 @@
                 div.remove()
             });
 
+            console.log("task has been added:" + added_task)
             return div
 
         }
@@ -148,13 +149,12 @@
             // this event will be pressing the "add" button on the task list
             event.preventDefault();
 
-            const added_task = makeToDo(searchBox.property("value")) // make new div out of input box content
+            const added_task = makeToDo(searchBox.property("value").trim()) // make new div out of input box content
 
             // add new div to toDoEntries
             toDoEntries.append(() => added_task.node())
-            console.log('form has been submitted')
+            searchBox.property("value", "") // clear search box after adding task
         }
-
         form.on('submit', submitHandler)
     </script>
 </body>
