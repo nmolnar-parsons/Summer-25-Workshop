@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Chart</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        #app {
+            padding: 20px;
+        }
+
+        #title {
+            padding-bottom:10px;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+        }
+
+        #container2 {
+            margin-top: 20px;
+        }
+
+        #container3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="title">
+            <h1>Bar Chart</h1>
+        </div>
+        <div id="container"></div>
+        <div id="container2"></div>
+        <div id="container3"></div>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="text/javascript">
+        const container = d3.select('#container');
+        const container2 = d3.select('#container2');
+        const container3 = d3.select('#container3');
+
+        const height = 300;
+        const width = 500;
+
+        const dataset = {
+            "Category A": 500,
+            "Category B": 300,
+            "Category C": 800
+        }
+
+        const data_array = Object.entries(dataset)
+
+        const symbols = {
+            "Category A": "#",
+            "Category B": "*",
+            "Category C": "•"
+        }
+        const chart = container
+            .append('svg')
+            .style('max-width', '30em')
+            .attr('viewBox', [0,0, width, height]) // set the viewBox to control the size of the SVG
+            .attr('width', width)
+            .attr('height', height)
+            .style('border', '1px solid black'); 
+
+        // something about xScale and yScale are not working 
+        // need to do object.entries(dataset) to get the keys and values 
+
+        const xScale = d3
+            .scaleBand()
+            .domain(Object.keys(dataset))
+            .range([0, width])
+            .paddingInner(0.1)
+            .paddingOuter(0.2);
+
+        const yScale = d3
+            .scaleLinear()
+            .domain([0, d3.max(Object.values(dataset))])
+            .range([height, 0]); 
+
+        chart.selectAll('rect').data(data_array).join('rect')
+            .attr("width", () => xScale.bandwidth())
+            .attr("height", (d) => height - yScale(d[1])) // d[1] is the value 
+            .attr('x', (d) => xScale(d[0]))
+            .attr("y", 0) 
+            .attr('fill', 'steelblue');
+
+
+
+
+        //create color Scale
+
+        // add rectangles to svg in chart
+            // selectAll rectanlges
+            // .data
+            // .join()
+            // set x, y, w, h attributes
+            // set fill attribute with scale
+
+
+
+    </script>
+</body>
+</html>

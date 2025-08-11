@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pictorial Unit Chart</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        #app {
+            padding: 20px;
+        }
+
+        #title {
+            padding-bottom:10px;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+        }
+
+        #container2 {
+            margin-top: 20px;
+        }
+
+        #container3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="title">
+            <h1>Pictorial Unit Chart</h1>
+        </div>
+        <div id="container"></div>
+        <div id="container2"></div>
+        <div id="container3"></div>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="text/javascript">
+        const container = d3.select('#container');
+        const container2 = d3.select('#container2');
+        const container3 = d3.select('#container3');
+
+        const dataset = {
+            "Category A": 5,
+            "Category B": 3,
+            "Category C": 8
+        }
+
+        const symbols = {
+            "Category A": "#",
+            "Category B": "*",
+            "Category C": "•"
+        }
+
+
+
+        const chart = container
+            .append('div')
+            .style('max-width', '30em');
+
+        const chart2 = container2
+            .append('div')
+            .style('max-width', '30em');
+
+        const chart3 = container3
+            .append('div')
+            .style('max-width', '30em');
+
+        // Next steps:
+        // use Object.entries() to convert object to array
+        // then use d3.join() to create elements
+        
+
+
+        //basic pictorial unit chart
+        chart.selectAll("div").data(Object.entries(dataset)).join("div")
+            .call((g) => { //labels
+                    g
+                    .append('span') // create span element which lives inside div for text
+                    .text((d) => { return d[0] })
+                    .style('display', 'inline-block')
+                    .style('width', '100px')
+            })
+            .call((g) => { //data
+                    g
+                    .append('span') // create span element which lives inside div for data
+                    .text((d) => {
+                        return '•'.repeat(d[1])
+                    })
+                    .style('display', 'inline-block')
+                    .style('width', '100px')
+            })
+
+
+        // pictorial unit chart with different symbols
+        chart.selectAll("div").data(Object.entries(dataset)).join("div")
+            .call((g) => { //labels
+                    g
+                    .append('span') // create span element which lives inside div for text
+                    .text((d) => { return d[0] })
+                    .style('display', 'inline-block')
+                    .style('width', '100px')
+            })
+            .call((g) => { //data
+                    g
+                    .append('span') // create span element which lives inside div for data
+                    .text((d) => {
+                        const symbol = symbols[d[0]];
+                        return symbol.repeat(d[1])
+                    })
+                    .style('display', 'inline-block')
+                    .style('width', '100px')
+            })
+
+        // pictorial unit chart with different symbols - alternative way?
+        chart2.selectAll("div").data(Object.entries(dataset)).join("div")
+            .call((g) => { //labels
+                    g
+                    .append('span') // create span element which lives inside div for text
+                    .text((d) => { return d[0] })
+                    .style('display', 'inline-block')
+                    .style('width', '100px')
+            })
+            .call((g) => { //data
+                    g
+                    .append('span') // create span element which lives inside div for data
+                    .text((d) => {
+                        if (d[0] === "Category A") {
+                            return '#'.repeat(d[1])
+                        } else if (d[0] === "Category B") {
+                            return '*'.repeat(d[1])
+                        } else if (d[0] === "Category C") {
+                            return '•'.repeat(d[1])
+                        }
+                    })
+                    .style('display', 'inline-block')
+                    .style('width', '100px')
+            })
+
+        chart2.selectAll("div").data(Object.entries(dataset)).join("div")
+            .call((g) => { //labels
+                    g
+                    .append('span') // create span element which lives inside div for text
+                    .text((d) => { return d[0] })
+                    .style('display', 'inline-block')
+                    .style('width', '100px')
+            })
+            .call((g) => { //data
+                    g
+                    .append('span') // create span element which lives inside div for data
+                    .text((d) => {
+                        if (d[0] === "Category A") {
+                            return '#'.repeat(d[1])
+                        } else if (d[0] === "Category B") {
+                            return '*'.repeat(d[1])
+                        } else if (d[0] === "Category C") {
+                            return '•'.repeat(d[1])
+                        }
+                    })
+                    .style('display', 'inline-block')
+                    .style('width', '100px')
+            })
+
+        chart3.append("image")
+            .attr("width", 100)
+            .attr("height", 100)
+            .attr("xlink:href", "image/4-BroadPeak-500.jpeg")
+  
+
+
+        // <img class="mountain" src= "image/4-BroadPeak-500.jpeg">
+        // <img class="mountain" src= "image/5-Annapurna-500.jpeg">
+        // <img class="mountain" src= "image/6-NP-500.jpeg">
+
+        // how to get images in pictorial unit chart???
+    </script>
+</body>
+</html>
