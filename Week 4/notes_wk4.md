@@ -34,3 +34,7 @@
         - exit.remove()
             - clears exit
 - if you can style it in CSS you can select it in D3
+
+- Axes and scales
+    - most important takeaway is the proper grouping of elements
+    - adding scale into a group with the chart makes sure that they won't be transformed indpendetly i.e. they will stay together

@@ -46,13 +46,13 @@
         const container2 = d3.select('#container2');
         const container3 = d3.select('#container3');
 
-        const height = 300;
-        const width = 500;
+        const height = 500;
+        const width = 600;
 
         const dataset = {
-            "Category A": 500,
-            "Category B": 300,
-            "Category C": 800
+            "Category A": 5,
+            "Category B": 3,
+            "Category C": 8
         }
 
         const data_array = Object.entries(dataset)
@@ -68,7 +68,7 @@
             .attr('viewBox', [0,0, width, height]) // set the viewBox to control the size of the SVG
             .attr('width', width)
             .attr('height', height)
-            .style('border', '1px solid black'); 
+          //  .style('border', '1px solid black'); 
 
         // something about xScale and yScale are not working 
         // need to do object.entries(dataset) to get the keys and values 
@@ -78,21 +78,46 @@
             .domain(Object.keys(dataset))
             .range([0, width])
             .paddingInner(0.1)
-            .paddingOuter(0.2);
+            .paddingOuter(0.1);
 
         const yScale = d3
             .scaleLinear()
             .domain([0, d3.max(Object.values(dataset))])
             .range([height, 0]); 
 
-        chart.selectAll('rect').data(data_array).join('rect')
+        const colorScale = d3
+            .scaleOrdinal()
+            .domain(Object.keys(symbols))
+            .range(d3.schemeTableau10);
+
+        // create y-axis
+        var yAxis = d3.axisLeft(yScale)
+
+        // create bottom axis
+        var xAxis = d3.axisBottom(xScale)
+        
+        // add a margin?
+        var margin = {left :40, right: 40, top : 0, bottom: 0};
+
+        // group for margin and chart
+        var chartGroup = chart.append("g")
+            .attr("transform", "translate("+margin.left+", "+margin.top+")");
+
+
+        chartGroup.selectAll('rect').data(data_array).join('rect')
             .attr("width", () => xScale.bandwidth())
             .attr("height", (d) => height - yScale(d[1])) // d[1] is the value 
             .attr('x', (d) => xScale(d[0]))
-            .attr("y", 0) 
-            .attr('fill', 'steelblue');
+            .attr("y", (d) => yScale(d[1]))
+            .attr('fill', (d) => colorScale(d[1]))
+           
 
-
+        chartGroup.append("g").attr('class', 'axis y')
+            .call(yAxis); // keep axis and chart together - no independent transforms
+            
+        chartGroup.append("g").attr('class', 'axis x')
+            .attr("transform", "translate(0," + height + ")") // move the x-axis to the bottom
+            .call(xAxis);
 
 
         //create color Scale
